@@ -1,0 +1,68 @@
+Taller: Manipulación y Monitoreo de Recursos del SO desde el Código
+Asignatura: Sistemas Operativos
+Código: A_Sistemas_Operativos_2620_7647
+Fecha de vencimiento: 7 de octubre de 2026 — 23:59
+1. Vigilante de Recursos — Monitoreo de RAM y CPU
+Concepto
+Gestor de memoria y E/S.
+Objetivo
+Crear un script que monitoree en tiempo real el consumo de recursos del sistema operativo y genere una alerta cuando se supere un determinado umbral, simulando un panel de control del SO.
+Tarea
+Usar la librería adecuada en Python o Node.js para obtener:
+- Porcentaje de uso de RAM.
+- Porcentaje de uso de CPU.
+Reto
+El script debe guardar un registro (log) en un archivo .txt cada vez que el uso de RAM supere el 80%.
+2. El Simulador de Memoria Caché — L1/L2 vs RAM
+Concepto
+Jerarquía de memoria y optimización.
+Objetivo
+Implementar una caché en memoria utilizando un Diccionario en Python o un Map en Node.js, con el propósito de comprender cómo el sistema operativo evita acceder constantemente a la memoria secundaria o disco.
+Tarea
+Crear un programa que lea archivos grandes.
+El funcionamiento debe ser:
+1. La primera vez que se solicite un archivo, debe ser leído desde el disco.
+2. El contenido del archivo debe almacenarse en un objeto en RAM.
+3. Las siguientes veces que se solicite el mismo archivo, debe obtenerse desde la caché en RAM.
+4. Evitar una nueva lectura desde el disco mientras el archivo se encuentre almacenado en caché.
+Reto
+Medir y comparar el tiempo de ejecución en ambos casos:
+- Lectura desde disco.
+- Lectura desde caché.
+Utilizar:
+- time.time() en Python.
+- console.time() en Node.js.
+3. Estrés de Memoria y Salto a la Virtual — Paginación
+Concepto
+Memoria virtual y archivo de paginación.
+Objetivo
+Forzar al sistema operativo a utilizar memoria virtual (swap/paginación) mediante la creación de objetos masivos.
+Tarea
+Crear un script que llene una lista o array con millones de strings dentro de un bucle.
+Mientras el programa se encuentra en ejecución, observar el comportamiento de la memoria del sistema operativo.
+Reto
+Abrir el Administrador de tareas y observar:
+- Consumo de RAM física.
+- Consumo de memoria virtual.
+- Comportamiento del sistema cuando la RAM disponible comienza a agotarse.
+⚠️ Advertencia
+Se debe implementar un límite de seguridad para evitar bloquear o afectar gravemente el funcionamiento de la máquina.
+El programa debe detenerse automáticamente al alcanzar el límite establecido.
+4. Prioridad de Procesos — Scheduling
+Concepto
+Planificación de procesos del Kernel.
+Objetivo
+Comprender que los procesos no tienen necesariamente la misma prioridad para el sistema operativo y que es posible influir en su nivel de prioridad.
+Tarea
+En Python o Node.js, utilizar una librería adecuada para modificar la prioridad de un proceso que esté realizando un cálculo matemático pesado.
+Reto
+Ejecutar dos instancias del mismo script:
+- Instancia 1: Prioridad Baja.
+- Instancia 2: Prioridad Tiempo Real.
+Ambas instancias deben realizar el mismo cálculo matemático.
+Posteriormente:
+1. Medir cuánto tarda cada proceso.
+2. Comparar los resultados.
+3. Determinar cuál proceso termina primero.
+4. Analizar cómo la prioridad afecta la planificación del procesador.
+⚠️ Precaución: La prioridad Tiempo Real debe utilizarse con cuidado, ya que puede afectar la capacidad de respuesta del sistema operativo.
